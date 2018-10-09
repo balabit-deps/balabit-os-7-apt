@@ -1,13 +1,40 @@
-apt (1.6.3ubuntu0.1) bionic-security; urgency=medium
+apt (1.6.6) bionic; urgency=medium
+
+  * Set DPKG_FRONTEND_LOCKED when running {pre,post}-invoke scripts.
+    Some post-invoke scripts install packages, which fails because
+    the environment variable is not set. This sets the variable for
+    all three kinds of scripts {pre,post-}invoke and pre-install-pkgs,
+    but we will only allow post-invoke at a later time.
+    (LP: #1796808)
+
+ -- Julian Andres Klode <juliank@ubuntu.com>  Tue, 09 Oct 2018 12:16:51 +0200
+
+apt (1.6.5) bionic; urgency=medium
+
+  [ David Kalnischkies ]
+  * Support records larger than 32kb in 'apt show' (Closes: #905527)
+    (LP: #1787120)
+
+  [ Julian Andres Klode ]
+  * Add support for dpkg frontend lock (Closes: #869546) (LP: #1781169)
+  * Set DPKG_FRONTEND_LOCKED as needed when doing selection changes
+  * http: Stop pipeline after close only if it was not filled before
+    (LP: #1794957)
+  * pkgCacheFile: Only unlock in destructor if locked before (LP: #1794053)
+  * Update libapt-pkg5.0 symbols for frontend locking
+
+ -- Julian Andres Klode <juliank@ubuntu.com>  Fri, 28 Sep 2018 15:06:34 +0200
+
+apt (1.6.4) unstable; urgency=critical
 
   [ David Kalnischkies ]
   * SECURITY UPDATE: Fallback in the mirror method allowed a later server to
     supply any InRelease file without it having to be verified. (LP: #1787752)
-    - apt-pkg/acquire-item.cc:: clear alternative URIs for mirror:// between
-      steps
+    - apt-pkg/acquire-item.cc:: clear alternative URIs for mirror:// between steps
     - CVE-2018-0501
+    - https://mirror.fail/
 
- -- Julian Andres Klode <juliank@ubuntu.com>  Mon, 20 Aug 2018 09:48:01 +0200
+ -- Julian Andres Klode <jak@debian.org>  Mon, 20 Aug 2018 17:38:50 +0200
 
 apt (1.6.3) unstable; urgency=medium
 
