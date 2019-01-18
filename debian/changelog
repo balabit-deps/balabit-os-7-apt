@@ -1,3 +1,10 @@
+apt (1.6.6ubuntu0.1) bionic-security; urgency=medium
+
+  * SECURITY UPDATE: content injection in http method (CVE-2019-3462)
+    (LP: #1812353)
+
+ -- Julian Andres Klode <juliank@ubuntu.com>  Fri, 18 Jan 2019 11:39:50 +0100
+
 apt (1.6.6) bionic; urgency=medium
 
   * Set DPKG_FRONTEND_LOCKED when running {pre,post}-invoke scripts.
