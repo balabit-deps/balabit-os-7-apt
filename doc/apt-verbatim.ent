@@ -262,14 +262,14 @@
 ">
 
 <!-- this will be updated by 'prepare-release' -->
-<!ENTITY apt-product-version "1.6.8">
+<!ENTITY apt-product-version "1.6.10">
 
 <!-- (Code)names for various things used all over the place -->
 <!ENTITY debian-oldstable-codename "jessie">
 <!ENTITY debian-stable-codename "stretch">
 <!ENTITY debian-testing-codename "buster">
 <!ENTITY debian-stable-version "9">
-<!ENTITY ubuntu-codename "xenial">
+<!ENTITY ubuntu-codename "bionic">
 
 <!-- good and bad just refers to matching and not matching a pattern…
      It is not a remark about the specific perl version.

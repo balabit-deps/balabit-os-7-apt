@@ -182,7 +182,7 @@ endif()
 # Configure some variables like package, version and architecture.
 set(PACKAGE ${PROJECT_NAME})
 set(PACKAGE_MAIL "APT Development Team <deity@lists.debian.org>")
-set(PACKAGE_VERSION "1.6.8")
+set(PACKAGE_VERSION "1.6.10")
 
 if (NOT DEFINED DPKG_DATADIR)
   execute_process(COMMAND ${PERL_EXECUTABLE} -MDpkg -e "print $Dpkg::DATADIR;"
@@ -237,6 +237,7 @@ endif()
 # Create our directories.
 install_empty_directories(
   ${CONF_DIR}/apt.conf.d
+  ${CONF_DIR}/auth.conf.d
   ${CONF_DIR}/preferences.d
   ${CONF_DIR}/sources.list.d
   ${CONF_DIR}/trusted.gpg.d
