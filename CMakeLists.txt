@@ -114,6 +114,11 @@ if (UDEV_FOUND)
   set(HAVE_UDEV 1)
 endif()
 
+find_package(Systemd)
+if (SYSTEMD_FOUND)
+  set(HAVE_SYSTEMD 1)
+endif()
+
 find_package(Seccomp)
 if (SECCOMP_FOUND)
   set(HAVE_SECCOMP 1)
@@ -182,7 +187,7 @@ endif()
 # Configure some variables like package, version and architecture.
 set(PACKAGE ${PROJECT_NAME})
 set(PACKAGE_MAIL "APT Development Team <deity@lists.debian.org>")
-set(PACKAGE_VERSION "1.6.10")
+set(PACKAGE_VERSION "1.6.11")
 
 if (NOT DEFINED DPKG_DATADIR)
   execute_process(COMMAND ${PERL_EXECUTABLE} -MDpkg -e "print $Dpkg::DATADIR;"
